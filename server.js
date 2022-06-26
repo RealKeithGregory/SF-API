@@ -2,32 +2,27 @@ const express = require('express')
 const app = express()
 const PORT = 8000
 const characters = {
-    'Ryu':{
+    'ryu':{
         'name': 'Ryu',
         'age': 57,
         'birthPlace': 'Japan',
         'specialMove': 'Hadouken'
     },
-    'Sagat':{
+    'sagat':{
         'name': 'Sagat',
         'age': 58,
         'birthPlace': 'Thailand',
         'specialMove': 'Tiger Knee'
     },
-    'M.Bison':{
+    'm.bison':{
         'name': 'M.Bison',
         'age': 'Unknown',
         'birthPlace': 'Unknown',
         'specialMove': 'Psycho Crusher' 
-    },
-    'Not A Character':{
-        'name': 'Not A Character',
-        'age': 'Not A Character',
-        'birthPlace': 'Not A Character',
-        'specialMove': 'Not A Character' 
     }
-
 }
+
+
 
 
 app.get('/',(request,response) => {
@@ -35,11 +30,11 @@ app.get('/',(request,response) => {
 })
 
 app.get('/characters/:characterName',(request, response) => {
-    const charactersName = request.params.characterName
+    const charactersName = request.params.characterName.toLowerCase
     if(characters[charactersName]){
         response.json(characters[charactersName])
     }else{
-        response.json(characters['notACharacter'])
+        alert('That is not a Character in this API!')
     }
     // response.json(characters)
 })
