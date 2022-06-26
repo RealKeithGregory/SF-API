@@ -19,6 +19,12 @@ const characters = {
         'age': 'Unknown',
         'birthPlace': 'Unknown',
         'specialMove': 'Psycho Crusher' 
+    },
+    'Not A Character':{
+        'name': 'Not A Character',
+        'age': 'Not A Character',
+        'birthPlace': 'Not A Character',
+        'specialMove': 'Not A Character' 
     }
 
 }
@@ -29,8 +35,13 @@ app.get('/',(request,response) => {
 })
 
 app.get('/characters/:characterName',(request, response) => {
-    request.params.characterName
-    response.json(characters)
+    const charactersName = request.params.characterName
+    if(characters[charactersName]){
+        response.json(characters[charactersName])
+    }else{
+        response.json(characters['notACharacter'])
+    }
+    // response.json(characters)
 })
 
 app.listen(PORT, () => {
