@@ -34,7 +34,7 @@ app.get('/characters/:characterName',(request, response) => {
     if(characters[charactersName]){
         response.json(characters[charactersName])
     }else{
-        return response.send.toString('That is not a Character in this API!')
+       // figure out how to formulate error msg
     }
     // response.json(characters)
 })
