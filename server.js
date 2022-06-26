@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
-const character = {
+const characters = {
     'Ryu':{
         'name': 'Ryu',
         'age': 57,
@@ -29,7 +29,7 @@ app.get('/',(request,response) => {
 })
 
 app.get('/characters',(request, response) => {
-    response.json(character)
+    response.json(characters)
 })
 
 app.listen(PORT, () => {
