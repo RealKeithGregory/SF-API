@@ -34,7 +34,7 @@ app.get('/characters/:characterName',(request, response) => {
     if(characters[charactersName]){
         response.json(characters[charactersName])
     }else{
-        alert('That is not a Character in this API!')
+        response.alert('That is not a Character in this API!')
     }
     // response.json(characters)
 })
