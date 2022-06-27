@@ -19,6 +19,12 @@ const characters = {
         'age': 'Unknown',
         'birthPlace': 'Unknown',
         'specialMove': 'Psycho Crusher' 
+    },
+    'notachar':{
+        'name': 'notachar',
+        'age': 'notachar',
+        'birthPlace': 'notachar',
+        'specialMove': 'notachar'         
     }
 }
 
@@ -34,9 +40,10 @@ app.get('/characters/:characterName',(request, response) => {
     if(characters[charactersName]){
         response.json(characters[charactersName])
     }else{
+        response.json(characters['notachar'])
        // figure out how to formulate error msg
     }
-    // response.json(characters)
+    
 })
 
 app.listen(PORT, () => {
