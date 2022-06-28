@@ -36,7 +36,7 @@ app.get('/',(request,response) => {
 })
 
 app.get('/characters/:characterName',(request, response) => {
-    const charactersName = request.params.characterName.toLowerCase
+    const charactersName = request.params.characterName.toLowerCase()
     if(characters[charactersName]){
         response.json(characters[charactersName])
     }else{
