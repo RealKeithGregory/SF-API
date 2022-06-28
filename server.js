@@ -25,10 +25,10 @@ const characters = {
         'specialMove': 'Psycho Crusher' 
     },
     'notachar':{
-        'name': 'notachar',
-        'age': 'notachar',
-        'birthPlace': 'notachar',
-        'specialMove': 'notachar'         
+        'name': 'COMING SOON',
+        'age': 'COMING SOON',
+        'birthPlace': 'COMING SOON',
+        'specialMove': 'COMING SOON'         
     }
 }
 
