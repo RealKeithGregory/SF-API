@@ -39,6 +39,10 @@ app.get('/',(request,response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
+app.get('/js/main.js',(req,res)=> {
+    res.sendFile(__dirname + '/js/main.js')
+})
+
 app.get('/characters/:characterName',(request, response) => {
     const charactersName = request.params.characterName.toLowerCase()
     if(characters[charactersName]){
